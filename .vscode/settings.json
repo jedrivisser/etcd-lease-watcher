@@ -1,0 +1,11 @@
+{
+  "cSpell.words": [
+    "clientv",
+    "etcd",
+    "stretchr"
+  ],
+  "editor.wordWrapColumn": 120,
+  "files.eol": "\n",
+  "go.testFlags": ["-v", "-cover"],
+  "prettier.printWidth": 120
+}
