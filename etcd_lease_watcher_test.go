@@ -9,10 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"go.etcd.io/etcd/clientv3"
-	"go.etcd.io/etcd/embed"
-
 	"github.com/stretchr/testify/assert"
+	clientv3 "go.etcd.io/etcd/client/v3"
+	"go.etcd.io/etcd/server/v3/embed"
 )
 
 func TestWatchExpiredEventsReceiveExpiry(t *testing.T) {
@@ -44,7 +43,7 @@ func TestWatchExpiredEventsReceiveExpiry(t *testing.T) {
 	}
 }
 
-// Based on: https://github.com/etcd-io/etcd/blob/v3.4.3/clientv3/snapshot/v3_snapshot_test.go#L38
+// Based on: https://github.com/etcd-io/etcd/blob/v3.5.4/tests/integration/embed/embed_test.go#L74
 // Does not work on WSL because of a bug https://github.com/microsoft/WSL/issues/3162, but work everywhere else
 func startETCDServer(t *testing.T) (endpoint string, close func()) {
 	cfg := embed.NewConfig()
