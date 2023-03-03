@@ -44,7 +44,6 @@ func TestWatchExpiredEventsReceiveExpiry(t *testing.T) {
 }
 
 // Based on: https://github.com/etcd-io/etcd/blob/v3.5.4/tests/integration/embed/embed_test.go#L74
-// Does not work on WSL because of a bug https://github.com/microsoft/WSL/issues/3162, but work everywhere else
 func startETCDServer(t *testing.T) (endpoint string, close func()) {
 	cfg := embed.NewConfig()
 	cfg.Logger = "zap"
